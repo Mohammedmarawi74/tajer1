@@ -1,0 +1,210 @@
+/* Sidebar Container */
+.sidebar-container {
+  @apply w-96 bg-[#0f172a] text-gray-300 h-full flex flex-col overflow-hidden border-l border-gray-800;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  @apply flex items-center justify-around border-b border-gray-800 bg-[#1e293b]/50;
+}
+
+.nav-tab-button {
+  @apply flex flex-col items-center py-4 px-2 flex-1 gap-1 transition-all text-[10px] font-bold;
+}
+
+.nav-tab-button.active {
+  @apply text-emerald-400 bg-[#1e293b];
+}
+
+.nav-tab-button:hover:not(.active) {
+  @apply hover:bg-[#1e293b];
+}
+
+/* Section Headers */
+.section-header {
+  @apply flex items-center gap-2 mb-2;
+}
+
+.section-title {
+  @apply text-sm font-bold text-white;
+}
+
+/* Form Elements */
+.form-label {
+  @apply text-xs font-medium text-gray-400;
+}
+
+.form-input {
+  @apply w-full p-2 bg-[#1e293b] border border-gray-700 rounded-md focus:ring-1 focus:ring-emerald-500 outline-none text-sm text-white;
+}
+
+.form-input-rtl {
+  @apply w-full p-2 bg-[#1e293b] border border-gray-700 rounded-md focus:ring-1 focus:ring-emerald-500 outline-none pl-10 text-sm text-white text-right;
+}
+
+/* AI Enhancement Button */
+.ai-enhance-btn {
+  @apply absolute left-2 top-2 text-emerald-500 hover:bg-[#2d3748] p-1 rounded transition disabled:opacity-50;
+}
+
+/* Logo Upload */
+.logo-upload-btn {
+  @apply flex-1 flex items-center justify-center gap-2 p-3 bg-[#1e293b] border border-dashed border-gray-600 rounded-xl hover:border-emerald-500 transition-all text-xs;
+}
+
+.logo-remove-btn {
+  @apply p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 hover:bg-red-500/20;
+}
+
+/* Divider */
+.divider {
+  @apply border-gray-800;
+}
+
+/* Section Actions */
+.section-actions {
+  @apply flex items-center justify-between;
+}
+
+.section-title-bold {
+  @apply text-sm font-bold text-white;
+}
+
+.add-section-btn {
+  @apply text-emerald-500 hover:bg-emerald-500/10 p-1 px-2 rounded flex items-center gap-1 text-[10px] font-bold border border-emerald-500/20;
+}
+
+/* Section Card */
+.section-card {
+  @apply p-4 bg-[#1e293b]/50 border border-gray-700 rounded-lg space-y-3 relative group;
+}
+
+.section-remove-btn {
+  @apply absolute top-2 left-2 text-red-400 opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.section-title-input {
+  @apply w-full bg-transparent font-bold text-sm outline-none border-b border-transparent focus:border-emerald-500/50 text-white text-right;
+}
+
+.section-item-textarea {
+  @apply w-full p-2 text-[11px] bg-[#0f172a] border border-gray-700 rounded outline-none resize-none text-gray-300 text-right;
+}
+
+/* Theme Grid */
+.theme-grid {
+  @apply grid grid-cols-2 gap-3;
+}
+
+.theme-button {
+  @apply relative flex items-center justify-between p-3 bg-[#1e293b] border rounded-xl transition-all h-14;
+}
+
+.theme-button.active {
+  @apply border-cyan-400 ring-1 ring-cyan-400/30;
+}
+
+.theme-button:not(.active) {
+  @apply border-gray-700 hover:border-gray-600;
+}
+
+.theme-label {
+  @apply text-xs font-bold;
+}
+
+.theme-label.active {
+  @apply text-white;
+}
+
+.theme-label.inactive {
+  @apply text-gray-400;
+}
+
+.theme-preview {
+  @apply relative w-7 h-7 shrink-0 rounded-full overflow-hidden border border-gray-800;
+}
+
+.theme-preview-inner {
+  @apply absolute inset-0 flex;
+}
+
+.theme-color-half {
+  @apply w-1/2 h-full;
+}
+
+/* Customization Section */
+.customization-title {
+  @apply text-xs font-bold text-gray-400 uppercase tracking-widest text-right;
+}
+
+.customization-grid {
+  @apply grid grid-cols-2 gap-3;
+}
+
+.color-picker-wrapper {
+  @apply space-y-2;
+}
+
+.color-picker-label {
+  @apply text-[10px] text-gray-500 block;
+}
+
+.color-picker-input {
+  @apply flex items-center gap-2 p-2 bg-[#1e293b] border border-gray-700 rounded-lg;
+}
+
+.color-picker {
+  @apply w-10 h-6 bg-transparent cursor-pointer rounded overflow-hidden;
+}
+
+.color-code {
+  @apply text-[10px] font-mono uppercase;
+}
+
+.back-to-themes-btn {
+  @apply w-full py-2 text-xs rounded-lg transition-all;
+}
+
+.back-to-themes-btn.active {
+  @apply bg-emerald-600 text-white;
+}
+
+.back-to-themes-btn.inactive {
+  @apply bg-gray-800 text-gray-500 pointer-events-none;
+}
+
+/* Snippets Grid */
+.snippets-grid {
+  @apply grid grid-cols-2 gap-2;
+}
+
+.snippet-btn {
+  @apply p-2 text-[11px] bg-[#1e293b] border border-gray-700 rounded-lg text-right text-gray-300 hover:border-emerald-500 hover:text-white transition-all;
+}
+
+/* CSS Editor */
+.css-editor-title {
+  @apply text-emerald-500 text-sm font-bold mb-1;
+}
+
+.css-editor {
+  @apply w-full h-80 bg-[#020617] border border-gray-800 rounded-xl p-4 font-mono text-xs text-blue-300 focus:border-emerald-500/50 outline-none;
+}
+
+/* Section Spacing */
+.section-spacing {
+  @apply space-y-8;
+}
+
+.section-spacing-sm {
+  @apply space-y-6;
+}
+
+.section-spacing-xs {
+  @apply space-y-4;
+}
+
+/* Scrollbar */
+.scrollbar-custom {
+  @apply scrollbar-thin scrollbar-thumb-gray-800;
+}
