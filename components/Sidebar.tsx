@@ -19,12 +19,12 @@ interface Props {
 
 type TabType = 'intelligence' | 'text' | 'design' | 'custom';
 
-const Sidebar: React.FC<Props> = ({ 
-  slide, 
-  setSlide, 
-  currentThemeKey, 
-  setThemeKey, 
-  customTheme, 
+const Sidebar: React.FC<Props> = ({
+  slide,
+  setSlide,
+  currentThemeKey,
+  setThemeKey,
+  customTheme,
   setCustomTheme,
   isUsingCustom,
   setIsUsingCustom
@@ -32,6 +32,14 @@ const Sidebar: React.FC<Props> = ({
   const [activeTab, setActiveTab] = useState<TabType>('text');
   const [isEnhancing, setIsEnhancing] = useState<string | null>(null);
   const logoInputRef = useRef<HTMLInputElement>(null);
+
+  // Predefined logos list
+  const PREDEFINED_LOGOS = [
+    '/logos/logo-1.png',
+    '/logos/logo-2.png',
+    '/logos/logo-3.png',
+    '/logos/logo-4.png',
+  ];
 
   const handleUpdate = (updates: Partial<SlideData>) => {
     setSlide({ ...slide, ...updates });
@@ -147,12 +155,36 @@ const Sidebar: React.FC<Props> = ({
               {/* Logo Upload */}
               <div className="space-y-2 mt-4">
                 <label className="form-label">شعار المنصة (Logo)</label>
+                
+                {/* Predefined Logos Grid */}
+                <div className="logo-grid">
+                  {PREDEFINED_LOGOS.map((logoSrc, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleUpdate({ logo: logoSrc })}
+                      className={`logo-option ${slide.logo === logoSrc ? 'selected' : ''}`}
+                    >
+                      <img src={logoSrc} alt={`Logo ${index + 1}`} className="logo-option-img" />
+                      {slide.logo === logoSrc && (
+                        <div className="logo-checkmark">✓</div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Custom Logo Upload */}
+                <div className="flex items-center gap-2 my-2">
+                  <div className="divider-line flex-1"></div>
+                  <span className="text-xs text-gray-500">أو</span>
+                  <div className="divider-line flex-1"></div>
+                </div>
+
                 <div className="flex gap-2">
                   <button
                     onClick={() => logoInputRef.current?.click()}
                     className="logo-upload-btn"
                   >
-                    {slide.logo ? (
+                    {slide.logo && !PREDEFINED_LOGOS.includes(slide.logo) ? (
                       <img src={slide.logo} alt="Preview" className="h-5 w-auto object-contain" />
                     ) : (
                       <ImageIcon size={16} className="text-emerald-500" />
