@@ -86,10 +86,10 @@ const SlideCanvas = forwardRef<HTMLDivElement, Props>(({ data, theme }, ref) => 
 
         {/* الشعار */}
         {data.logo && (
-          <div className="absolute top-8 left-8 z-20">
-            <img 
-              src={data.logo} 
-              alt="Logo" 
+          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20">
+            <img
+              src={data.logo}
+              alt="Logo"
               className="max-h-14 w-auto object-contain drop-shadow-2xl bg-white/30 backdrop-blur-lg p-2 rounded-2xl border border-white/40"
               crossOrigin="anonymous"
             />
