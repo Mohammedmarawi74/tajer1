@@ -3,7 +3,7 @@ import Sidebar from './components/Sidebar';
 import SlideCanvas from './components/SlideCanvas';
 import { INITIAL_SLIDE, THEME_COLORS } from './constants';
 import { SlideData, ThemeColors } from './types';
-import { Download, LayoutPanelLeft, Plus, ChevronRight, ChevronLeft, Loader2 } from 'lucide-react';
+import { Download, LayoutPanelLeft, Plus, ChevronRight, ChevronLeft, Loader2, Menu, Search } from 'lucide-react';
 import * as htmlToImage from 'html-to-image';
 
 const App: React.FC = () => {
@@ -23,6 +23,8 @@ const App: React.FC = () => {
     background: '#ffffff',
     text: '#111827'
   });
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const currentSlide = slides[activeIndex] || INITIAL_SLIDE;
 
@@ -118,7 +120,7 @@ const App: React.FC = () => {
 
   return (
     <div className="flex h-screen w-full bg-[#0a0a0c] overflow-hidden text-white font-['IBM_Plex_Sans_Arabic']" dir="rtl">
-      {!isPreview && (
+      {!isPreview && isSidebarOpen && (
         <Sidebar 
           slide={currentSlide} 
           setSlide={updateCurrentSlide} 
@@ -135,39 +137,58 @@ const App: React.FC = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none opacity-40" />
 
         <header className="w-full max-w-5xl flex justify-between items-center mb-10 bg-[#18181b]/95 backdrop-blur-2xl p-5 px-10 rounded-[32px] border border-white/10 z-20 shadow-2xl shrink-0">
-          <div className="flex items-center gap-8">
+          {/* Right side - Hamburger Menu */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="p-3 hover:bg-white/10 rounded-xl text-emerald-400 transition-all hover:scale-110"
+            >
+              <Menu size={24} />
+            </button>
             <div className="flex items-center gap-3 bg-emerald-500/20 px-5 py-2.5 rounded-2xl text-emerald-400 border border-emerald-500/30">
               <LayoutPanelLeft size={22} />
               <span className="text-sm font-black uppercase tracking-widest">منصة التصميم</span>
             </div>
-            
-            <div className="flex items-center gap-4 bg-white/5 p-1 rounded-2xl border border-white/10">
-               <button 
-                onClick={() => setActiveIndex(Math.max(0, activeIndex - 1))}
-                disabled={activeIndex === 0}
-                className="p-2.5 hover:bg-white/10 rounded-xl disabled:opacity-20 text-emerald-400 transition-all hover:scale-110"
-               >
-                 <ChevronRight size={24} />
-               </button>
-               <span className="text-sm font-black text-gray-200 min-w-[4rem] text-center font-mono">
-                 {activeIndex + 1} / {slides.length}
-               </span>
-               <button 
-                onClick={() => setActiveIndex(Math.min(slides.length - 1, activeIndex + 1))}
-                disabled={activeIndex === slides.length - 1}
-                className="p-2.5 hover:bg-white/10 rounded-xl disabled:opacity-20 text-emerald-400 transition-all hover:scale-110"
-               >
-                 <ChevronLeft size={24} />
-               </button>
-            </div>
           </div>
 
+          {/* Center - Slide Navigation */}
+          <div className="flex items-center gap-4 bg-white/5 p-1 rounded-2xl border border-white/10">
+             <button
+              onClick={() => setActiveIndex(Math.max(0, activeIndex - 1))}
+              disabled={activeIndex === 0}
+              className="p-2.5 hover:bg-white/10 rounded-xl disabled:opacity-20 text-emerald-400 transition-all hover:scale-110"
+             >
+               <ChevronRight size={24} />
+             </button>
+             <span className="text-sm font-black text-gray-200 min-w-[4rem] text-center font-mono">
+               {activeIndex + 1} / {slides.length}
+             </span>
+             <button
+              onClick={() => setActiveIndex(Math.min(slides.length - 1, activeIndex + 1))}
+              disabled={activeIndex === slides.length - 1}
+              className="p-2.5 hover:bg-white/10 rounded-xl disabled:opacity-20 text-emerald-400 transition-all hover:scale-110"
+             >
+               <ChevronLeft size={24} />
+             </button>
+          </div>
+
+          {/* Left side - Search and Actions */}
           <div className="flex items-center gap-5">
-            <button 
+            <div className="flex items-center gap-3 bg-white/5 px-4 py-2.5 rounded-2xl border border-white/10">
+              <Search size={18} className="text-gray-400" />
+              <input
+                type="text"
+                placeholder="بحث..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="bg-transparent border-none outline-none text-sm text-white placeholder-gray-500 w-32"
+              />
+            </div>
+            <button
               onClick={() => setIsPreview(!isPreview)}
               className={`px-8 py-3 rounded-2xl text-sm font-black transition-all border ${
-                isPreview 
-                ? 'bg-emerald-500 text-white border-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.4)]' 
+                isPreview
+                ? 'bg-emerald-500 text-white border-emerald-400 shadow-[0_0_30px_rgba(16,185,129,0.4)]'
                 : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/15'
               }`}
             >
