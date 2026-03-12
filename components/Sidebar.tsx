@@ -54,21 +54,21 @@ const Sidebar: React.FC<Props> = ({
 
   const handleSectionUpdate = (secId: string, updates: any) => {
     const newSections = slide.sections.map(s => s.id === secId ? { ...s, ...updates } : s);
-    handleUpdate({ sections: newSections });
+    setSlide({ ...slide, sections: newSections });
   };
 
   const addSection = () => {
     const newSec = { id: Math.random().toString(), title: 'عنوان جديد', items: ['نقطة جديدة'] };
-    handleUpdate({ sections: [...slide.sections, newSec] });
+    setSlide({ ...slide, sections: [...slide.sections, newSec] });
   };
 
   const removeSection = (id: string) => {
-    handleUpdate({ sections: slide.sections.filter(s => s.id !== id) });
+    setSlide({ ...slide, sections: slide.sections.filter(s => s.id !== id) });
   };
 
   const addSnippet = (snippetCode: string) => {
     const currentCss = slide.customCss || '';
-    handleUpdate({ customCss: currentCss + '\n' + snippetCode });
+    setSlide({ ...slide, customCss: currentCss + '\n' + snippetCode });
   };
 
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,7 +84,7 @@ const Sidebar: React.FC<Props> = ({
 
   return (
     <div className="sidebar-container">
-      {/* Navigation Tabs */}
+      {/* Navigation Tabs - Modern Design */}
       <div className="nav-tabs">
         <button
           onClick={() => setActiveTab('intelligence')}
@@ -116,12 +116,12 @@ const Sidebar: React.FC<Props> = ({
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-8 scrollbar-custom">
+      <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-custom">
         {activeTab === 'text' && (
           <>
             <section className="section-spacing-xs">
               <div className="section-header">
-                <UserCircle className="text-emerald-500" size={20} />
+                <UserCircle className="text-blue-500" size={20} />
                 <h3 className="section-title">الهوية الشخصية</h3>
               </div>
               <div className="space-y-2">
@@ -155,7 +155,7 @@ const Sidebar: React.FC<Props> = ({
               {/* Logo Upload */}
               <div className="space-y-2 mt-4">
                 <label className="form-label">شعار المنصة (Logo)</label>
-                
+
                 {/* Predefined Logos Grid */}
                 <div className="logo-grid">
                   {PREDEFINED_LOGOS.map((logoSrc, index) => (
@@ -175,7 +175,7 @@ const Sidebar: React.FC<Props> = ({
                 {/* Custom Logo Upload */}
                 <div className="flex items-center gap-2 my-2">
                   <div className="divider-line flex-1"></div>
-                  <span className="text-xs text-gray-500">أو</span>
+                  <span className="text-xs text-gray-400">أو</span>
                   <div className="divider-line flex-1"></div>
                 </div>
 
@@ -187,7 +187,7 @@ const Sidebar: React.FC<Props> = ({
                     {slide.logo && !PREDEFINED_LOGOS.includes(slide.logo) ? (
                       <img src={slide.logo} alt="Preview" className="h-5 w-auto object-contain" />
                     ) : (
-                      <ImageIcon size={16} className="text-emerald-500" />
+                      <ImageIcon size={16} className="text-blue-500" />
                     )}
                     <span>{slide.logo ? 'تغيير الشعار' : 'رفع شعار'}</span>
                   </button>
@@ -260,7 +260,7 @@ const Sidebar: React.FC<Props> = ({
         {activeTab === 'design' && (
           <section className="section-spacing">
             <div>
-              <h3 className="customization-title mb-4">ثيمات الألوان (THEMES)</h3>
+              <h3 className="customization-title mb-4">ثيمات الألوان</h3>
               <div className="theme-grid">
                 {(Object.keys(THEME_COLORS) as Array<keyof typeof THEME_COLORS>).map((key) => {
                   const theme = (THEME_COLORS as any)[key];
@@ -338,7 +338,7 @@ const Sidebar: React.FC<Props> = ({
         {activeTab === 'custom' && (
           <section className="section-spacing-sm">
             <div>
-              <h3 className="css-editor-title mb-4">قوالب جاهزة (SNIPPETS)</h3>
+              <h3 className="css-editor-title mb-4">قوالب جاهزة</h3>
               <div className="snippets-grid">
                 {CSS_SNIPPETS.map((snippet) => (
                   <button
