@@ -119,7 +119,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#F8FAFC] overflow-hidden text-[#0F172A] font-['Cairo']" dir="rtl">
+    <div className="flex h-screen w-full bg-[#F8FAFC] overflow-hidden text-[#0F172A]" style={{ fontFamily: 'var(--arabic-font)' }} dir="rtl">
       {!isPreview && isSidebarOpen && (
         <Sidebar
           slide={currentSlide}

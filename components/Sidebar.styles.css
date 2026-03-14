@@ -44,7 +44,7 @@
   cursor: pointer;
   color: #6B7280;
   border-radius: 12px;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .nav-tab-button.active {
@@ -69,14 +69,14 @@
   font-size: 0.9375rem;
   font-weight: 800;
   color: #0F172A;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .section-title-bold {
   font-size: 0.875rem;
   font-weight: 800;
   color: #0F172A;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 /* Form Elements */
@@ -84,7 +84,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: #6B7280;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   display: block;
   margin-bottom: 0.375rem;
 }
@@ -98,7 +98,7 @@
   outline: none;
   font-size: 0.8125rem;
   color: #1F2937;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   transition: all 0.15s ease;
 }
 
@@ -118,7 +118,7 @@
   outline: none;
   font-size: 0.8125rem;
   color: #1F2937;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   text-align: right;
   transition: all 0.15s ease;
 }
@@ -225,7 +225,7 @@
 
 .text-xs {
   font-size: 0.6875rem;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .text-gray-400 {
@@ -267,7 +267,7 @@
   font-size: 0.75rem;
   color: #6B7280;
   cursor: pointer;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   font-weight: 600;
 }
 
@@ -323,7 +323,7 @@
   background: none;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .add-section-btn:hover {
@@ -383,7 +383,7 @@
   border-bottom: 1px solid transparent;
   color: #1F2937;
   text-align: right;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   padding: 0.375rem 0;
   margin-bottom: 0.75rem;
 }
@@ -403,7 +403,7 @@
   resize: none;
   color: #4B5563;
   text-align: right;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   transition: all 0.15s ease;
 }
 
@@ -448,7 +448,7 @@
 .theme-label {
   font-size: 0.6875rem;
   font-weight: 700;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .theme-label.active {
@@ -489,7 +489,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: right;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .customization-grid {
@@ -508,7 +508,7 @@
   font-size: 0.625rem;
   color: #9CA3AF;
   display: block;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   font-weight: 600;
 }
 
@@ -564,7 +564,7 @@
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   cursor: pointer;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   font-weight: 700;
 }
 
@@ -598,7 +598,7 @@
   color: #4B5563;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
   font-weight: 600;
 }
 
@@ -615,7 +615,7 @@
   color: #2563EB;
   font-size: 0.8125rem;
   font-weight: 800;
-  font-family: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  font-family: var(--arabic-font);
 }
 
 .css-editor {

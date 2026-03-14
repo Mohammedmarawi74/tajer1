@@ -3,8 +3,8 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-  /* Primary Arabic Font - Cairo */
-  --arabic-font: 'Cairo', 'Tajawal', 'Almarai', sans-serif;
+  /* Primary Arabic Font - IBM Plex Sans Arabic */
+   --arabic-font: 'IBM Plex Sans Arabic', 'Cairo', 'Tajawal', 'Almarai', sans-serif;
   
   /* Al-Tajer Digital Color Palette */
   --color-bg-primary: #FFFFFF;

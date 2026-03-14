@@ -18,7 +18,7 @@ const SlideCanvas = forwardRef<HTMLDivElement, Props>(
         className="poster-root relative w-full flex flex-col arabic-text-fix"
         style={{
           backgroundColor: theme.background,
-          fontFamily: "'Cairo', 'Tajawal', 'Almarai', sans-serif",
+          fontFamily: "var(--arabic-font)",
           minHeight: "625px",
           height: "auto",
           overflow: "visible",
