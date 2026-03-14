@@ -138,7 +138,7 @@ const App: React.FC = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-50" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none opacity-40" />
 
-        <header className="w-full max-w-5xl flex justify-between items-center mb-10 bg-white/90 backdrop-blur-xl p-5 px-10 rounded-[32px] border border-gray-200/60 z-20 shadow-[0_4px_20px_rgba(0,0,0,0.08)] shrink-0">
+        <header className="w-full max-w-5xl flex justify-between items-center mb-10 bg-white/90 backdrop-blur-xl p-5 px-10 rounded-[32px] border z-20 shadow-[0_4px_20px_rgba(0,0,0,0.08)] shrink-0">
           {/* Right side - Hamburger Menu */}
           <div className="flex items-center gap-4">
             <button
