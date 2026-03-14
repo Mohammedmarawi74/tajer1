@@ -187,7 +187,7 @@ const SlideCanvas = forwardRef<HTMLDivElement, Props>(
           </div>
           <div className="footer-left flex-1 text-left" dir="ltr">
             <span className="font-mono font-bold tracking-wider opacity-90">
-              al-tajer.digital
+              dtajer.com
             </span>
           </div>
         </div>
